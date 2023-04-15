@@ -1,0 +1,95 @@
+body {
+    height: 100em;
+}
+
+/* Position Property :- Position Property Define करता है की Element Web Page में कहाँ रहेगा। */
+/* 4 Main Types Of Position:-
+    1.Static (Default :- जो हर Element की होती है। )
+    2. Relative
+    3. Absolute
+    4. Fixed
+
+There Are $ Sub-Types Of Main Properties:-
+    1. Top
+    2. Bottom
+    3. Left
+    4. Right */
+/*? लेकिन ये सिर्फ तभी काम जब Main Properties में से कोई तीन Apply होंगी। (Relative, Absolute, Fixed) Static पर ये काम नहीं करेंगी क्योंकि Static Default Position होती है हर Element की  */
+
+
+
+#parent {
+    border: 0.2em solid red;
+    padding: 1em;
+    width: 50svw;
+    margin: 5em;
+    position: relative;
+}
+
+#one {
+    /* (2.) Absolute Position Property :- जिस बी Element पर आप Absolute Position Property का Use करते हो वो Element अपनी MOVEMENT की CALCULATION अपने POSITIONED PARENT की Position से Calculate करता है। अगर उसका Parent Positione नहीं है तो वो अपने Nearest को देखेगा जो Positioned है और अगर उसे कोई Positioned Parent नहीं मिलता तो Body के हिसाब से लेना Start कर देगा। */
+
+    /*? Positioned Element (Parent) :- एक Element Positioned Element तब होता है उस एलेमेन्ट पर Position Property Apply होती है और उसका Value Static को छोड़ के कुछ भी हो। यदि एक Element पर Position :- Static लगा हुआ है या कोई भी Position Property Apply नहीं है तो वो Positioned Element नहीं होगा। */
+
+    /*! जिस भी Element पर Position Absolute Apply करेंगे वो Element अपनी Original Position/ current Position/ Normal Position को छोड़ देता है Reserved Space को Occupy करके नहीं रखता। और ऊपर उठ जाता यानि Z-Index सबसे बड़ा हो जाता है। और कोई भी Element या उससे अगला Element उसकी Reserved Space को Occupy कर लेता है, चाहे Absolute Element अपनी जगह से Move हो या ना हो। */
+
+    width: 5em;
+    height: 5em;
+    background-color: aqua;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#two {
+    /* (1.) Relative Position Property :- जिस भी Element पर आप Relative Position Property Apply करते हो तो वो Element अपनी CURRENT POSITION के RELATIVE Move करेगा। जिसे हम 4 Sub - Properties (Top, Bottom, Left, Right) लगाकर Deifne करेंगे। 
+    For Example :- यदि हम Specify करते हैं Top:-50px; तो Element अभी जहां पर है Current Position वहाँ से 50px Top हो जाएगा। */
+
+    /*? यदि Position Property Relative लगाई है और Top, Bottom, Left, Right में से कुछ भी नहीं लगाई तो वो Element अपनी Current Position पर पड़ा रहेगा कहीं नहीं हिलेगा क्योंकि Relative Element अपनी जगह (Original Position/ current Position/ Normal Position) से Relative होता है। */
+
+    /*! Important :- जिस भी Element को आप Position Relative दोगे और Top, Bottom, Left, Right में से कुछ भी Specify करोगे तो वो Element अपनी Original Position/ current Position/ Normal Position से हटेगा तो जरूर लेकिन अपनी Reserved Space को Occupy करके रखेगा वहाँ पर किसी भी और Element को आने नहीं देगा। */
+
+    /*  Two Main Properties Of Relative Position :- 
+        i.) Element अपनी Original Position/ current Position/ Normal Position से Calculate करेगा अपनी New Position  को। 
+        ii.) Relative Element अपने Reserved Space को Occupy करके रखेगा। 
+    */
+
+    width: 5em;
+    height: 5em;
+    background-color: blue;
+    display: inline-block;
+    position: relative;
+    top: 2.5em;
+    left: 2.5em;
+}
+
+/* Difference Between Relative And Absolute Position:- 
+    Relative Position Property :- 
+    (i.) Relative Element सिर्फ अपनी Original Position/ current Position/ Normal Position से Movement Calculate  करता है। 
+    (ii.) Relative Element अपनी Original Position/ current Position/ Normal Position को Occupy करके रखता चाहे वो दिख कहीं पर भी रहा हो लेकिन अपने Reserved Space पर / अपनी जगह पर किसी और Element को नहीं आने देता।
+
+    Absolute Position Property :-
+    (i.) Absolute Element अपनी Claculation अपने Nearest Positioned Parent से अपनी Calculate करता है, अगर कुछ भी नहीं मिलता तो Body से Claculate करना Start कर देता है।
+    (ii.) Absolute Element तुरंत अपने Reserved Space को छोड़ देता है चाहे वो(Absolute Element) Element अपनी जगह से हिले या ना हिले। उसकी(Absolute Element) की जगह पर कोई और Element आ जाएगा। */
+
+#three {
+    /* Fixed Position Property :- जिस भी Element की Fixed Position Property Use करते हो वो Element अपनी Claculation View Port के हिसाब से Calculate करेगा और वो अपनी जगह(View Port) पर Fix रहेगा चाहे कितना भ Screen को Scroll करो। */
+
+    /*! जिस भी Element की Position Fixed करोगे वो अपनी Element भी अपनी Original Position/ current Position/ Normal Position को तुरंत छोड़ देगा। अपने Reserved Space को Occupy करके नहीं रखेगा और कोई भी Element या उससे अगला Element उसके Reserved Space को Occupy कर लेगा। */
+
+    width: 5em;
+    height: 5em;
+    background-color: yellow;
+    display: inline-block;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+#four {
+    width: 5em;
+    height: 5em;
+    background-color: crimson;
+    display: inline-block;
+}
